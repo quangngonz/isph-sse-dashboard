@@ -6,7 +6,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-import {createBrowserRouter, RouterProvider} from 'react-router';
+import {createBrowserRouter, Navigate, RouterProvider} from 'react-router';
 import App from './App';
 import Layout from './layouts/dashboard';
 
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
                 children: [
                     {
                         path: '',
-                        Component: DashboardPage,
+                        Component: () => <Navigate to={'/dashboard'}/>,
                     },
                     {
                         path: '/dashboard',
