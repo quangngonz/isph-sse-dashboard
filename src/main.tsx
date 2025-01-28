@@ -12,10 +12,11 @@ import Layout from './layouts/dashboard';
 
 import DashboardPage from './pages/dashboardPage';
 
-import SignInPage from './pages/signin';
+import SignInPage from './pages/signin/signin';
 
 import StocksOverview from "./pages/stocks/overview/stocksOverview";
 import StockList from "./pages/stocks/list/stockList";
+import SignInRole from "./pages/signin/signinRole";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: '/sign-in',
         Component: SignInPage,
+      },
+      {
+        path: '/sign-in-role',
+        Component: SignInRole,
       }
     ],
   },

@@ -3,9 +3,9 @@ import * as React from 'react';
 import Alert from '@mui/material/Alert';
 import LinearProgress from '@mui/material/LinearProgress';
 import {SignInPage} from '@toolpad/core/SignInPage';
-import {Navigate, useNavigate} from 'react-router';
-import {useSession, type Session} from '../SessionContext';
-import {signInWithGoogle, signInWithCredentials, firebaseSignOut} from '../firebase/auth';
+import { useNavigate} from 'react-router';
+import {useSession, type Session} from '../../SessionContext';
+import {signInWithGoogle, signInWithCredentials, firebaseSignOut} from '../../firebase/auth';
 
 function DemoInfo() {
   return (
@@ -15,24 +15,12 @@ function DemoInfo() {
   );
 }
 
-function UnauthorisedAccount() {
-  return (
-      <Alert severity="error">
-        You are not authorised to access this page
-      </Alert>
-  );
-}
-
 export default function SignIn() {
-  const {session, setSession, loading} = useSession();
+  const {setSession, loading} = useSession();
   const navigate = useNavigate();
 
   if (loading) {
     return <LinearProgress/>;
-  }
-
-  if (session) {
-    return <Navigate to="/"/>;
   }
 
   return (
@@ -66,8 +54,6 @@ export default function SignIn() {
 
               const token = await result.user.getIdToken();
               const userId = result.user.uid;
-              console.log("Firebase Token:", token);
-              console.log("User ID:", userId);
 
               try {
                 // Authenticate with the backend
@@ -86,11 +72,12 @@ export default function SignIn() {
                   const text = await response.text();
                   console.error("Authentication Error:", text);
                   await firebaseSignOut();
+                  navigate('/sign-in-role', { replace: true });
                   return { error: 'Not an admin or authentication failed' };
                 }
 
                 // Convert Firebase user to session format
-                const userSession = {
+                const userSession : Session = {
                   user: {
                     userId: result.user.uid || '',
                     name: result.user.displayName || '',
@@ -102,7 +89,7 @@ export default function SignIn() {
 
                 // Set the session and redirect to the callback URL or home page
                 setSession(userSession);
-                navigate(callbackUrl || '/', { replace: true }); // Redirect to the callback URL or home page
+                navigate(callbackUrl || '/sign-in-role', { replace: true }); // Redirect to the callback URL or home page
                 return {}; // Return an empty object to indicate success
               } catch (error) {
                 console.error("Error during authentication:", error);
