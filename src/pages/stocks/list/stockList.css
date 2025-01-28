@@ -1,0 +1,13 @@
+.price-up {
+    font-weight: bold;
+    color: green;
+}
+
+.price-down {
+    font-weight: bold;
+    color: red;
+}
+
+.price{
+    font-weight: bold;
+}

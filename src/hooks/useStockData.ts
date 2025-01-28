@@ -1,45 +1,104 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import {GridColDef} from "@mui/x-data-grid";
 
-interface Stock {
-    id: string;
-    full_name: string;
-    current_price: number;
-    initial_price: string;
-    market_cap: string;
-    sector: string;
-    total_volume: string;
-    volume_available: string;
-}
+import type {StockData } from "../utils/types/stock";
+
+const columns: GridColDef[] = [
+    {
+        field: 'id',
+        headerName: 'Ticker',
+        width: 100,
+        align: 'center',
+        headerAlign: 'center'
+    },
+    {
+        field: 'full_name',
+        headerName: 'Full Name',
+        width: 200
+    },
+    {
+        field: 'current_price',
+        headerName: 'Current Price',
+        type: 'number',
+        width: 130,
+        align: 'center',
+        headerAlign: 'center',
+        cellClassName: (params) => {
+            const currentPrice = parseFloat(params.value);
+            const initialPrice = parseFloat(params.row.initial_price);
+
+            if (currentPrice > initialPrice) {
+                return 'price-up';
+            } else if (currentPrice < initialPrice) {
+                return 'price-down';
+            } else {
+                return 'price';
+            }
+        },
+    },
+    {
+        field: 'initial_price',
+        headerName: 'Initial Price',
+        type: 'number',
+        width: 100,
+        align: 'center',
+        headerAlign: 'center'
+    },
+    {
+        field: 'market_cap',
+        headerName: 'Market Cap',
+        type: 'number',
+        width: 150,
+        align: 'center',
+        headerAlign: 'center'
+    },
+    {
+        field: 'sector',
+        headerName: 'Sector',
+        width: 150
+    },
+    {
+        field: 'total_volume',
+        headerName: 'Total Volume',
+        type: 'number',
+        width: 150,
+        align: 'center',
+        headerAlign: 'center'
+    },
+    {
+        field: 'volume_available',
+        headerName: 'Volume Available',
+        type: 'number',
+        width: 150,
+        align: 'center',
+        headerAlign: 'center'
+    },
+];
 
 const useStockData = () => {
-    const [data, setData] = useState<Stock[]>([]);
+    const [data, setData] = useState<StockData | undefined>(undefined);
 
     const { isPending, error } = useQuery({
-        queryKey: ["repoData"],
+        queryKey: ["stocksData"],
         queryFn: async () => {
             const res = await fetch("https://isph-sse.vercel.app/stocks");
-            const json = await res.json();
+            const json: StockData = await res.json();
             setData(json);
             return json;
         },
+        refetchInterval: 10000,
     });
 
-    const rows = data.length > 0 ? Object.keys(data[0]).map((key) => {
-        const stock = data[0][key] as Stock;
-        return {
-            id: key,
-            full_name: stock.full_name,
-            current_price: stock.current_price,
-            initial_price: stock.initial_price,
-            market_cap: stock.market_cap,
-            sector: stock.sector,
-            total_volume: stock.total_volume,
-            volume_available: stock.volume_available,
-        };
-    }) : [];
+    // Map over the keys (stock symbols) of the data object
+    const rows = data
+        ? Object.keys(data).map((symbol) => ({
+            id: symbol, // Use the stock symbol as the id
+            ...data[symbol], // Spread the rest of the stock data
+        }))
+        : [];
 
-    return { isPending, error, rows };
+    return { isPending, error, columns, rows };
 };
 
 export default useStockData;
