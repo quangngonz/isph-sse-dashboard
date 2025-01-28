@@ -115,7 +115,7 @@ export default function SignIn() {
               return { error: error instanceof Error ? error.message : 'An unexpected error occurred' };
             }
           }}
-          slots={{subtitle:  UnauthorisedAccount}}
+          slots={{subtitle:  DemoInfo}}
       />
   );
 }
