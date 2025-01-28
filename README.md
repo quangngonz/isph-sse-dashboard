@@ -1,46 +1,66 @@
-# Toolpad Core - Vite with React Router and Firebase Auth
+# ISPH Stocks Exchange Admin Dashboard
 
-This example provides a minimal setup to get Toolpad Core working in Vite with HMR, as well as routing with React Router and authentication with Firebase.
+This project is a React-based admin dashboard for managing the ISPH Stocks Exchange. It provides a user interface for monitoring stocks, events, users, and transactions, as well as general settings.
 
-## Clone using `create-toolpad-app`
+## Features
 
-To copy this example and customize it for your needs, run
-
-```bash
-npx create-toolpad-app@latest --example firebase-vite
-# or
-pnpm dlx create-toolpad-app@latest --example firebase-vite
-```
-
-## Setting up
-
-The project requires a `.env` with the following variables:
-
-```bash
-VITE_FIREBASE_API_KEY=
-VITE_FIREBASE_AUTH_DOMAIN=
-VITE_FIREBASE_PROJECT_ID=
-VITE_FIREBASE_STORAGE_BUCKET=
-VITE_FIREBASE_MESSAGE_SENDER_ID=
-VITE_FIREBASE_APP_ID=
-```
-
+-   **Authentication:** Supports sign-in with Google and custom credentials.
+-   **Dashboard:** A welcome page providing an overview of the application.
+-   **Stocks Management:**
+    -   **Overview:** View a summary of stock performance.
+    -   **List:** Browse and manage individual stocks.
+-   **Events Management:**
+    -   **Pending:** Monitor and manage pending events.
+    -   **History:** View a history of past events.
+-   **Users:** Manage user accounts.
+-   **Transactions:** View and manage transaction records.
+-   **Settings:** Configure application settings.
+-   **Responsive Layout:** Adapts to different screen sizes for optimal viewing.
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+-   Node.js (v18 or higher recommended)
+-   npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone <repository-url>
+    cd quangngonz-isph-sse-dashboard
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+### Configuration
+
+1. **Firebase:**
+    -   Create a Firebase project in the Firebase console.
+    -   Enable Google Authentication and (optionally) Email/Password Authentication in your Firebase project.
+    -   Add a web app to your Firebase project and obtain the configuration.
+    -   Set environment variables in your development environment for the Firebase configuration. You can use a `.env` file (remember to add it to `.gitignore`):
+
+        ```
+        VITE_FIREBASE_API_KEY=<your-api-key>
+        VITE_FIREBASE_AUTH_DOMAIN=<your-auth-domain>
+        VITE_FIREBASE_PROJECT_ID=<your-project-id>
+        VITE_FIREBASE_STORAGE_BUCKET=<your-storage-bucket>
+        VITE_FIREBASE_MESSAGE_SENDER_ID=<your-messaging-sender-id>
+        VITE_FIREBASE_APP_ID=<your-app-id>
+        ```
+
+### Development
+
+To start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
-
-## The source
-
-[Check out the source code](https://github.com/mui/toolpad/tree/master/examples/core/vite/)
