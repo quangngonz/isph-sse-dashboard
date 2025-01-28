@@ -70,7 +70,7 @@ const handleLogin = async (
 
             // Set the session and redirect to the callback URL or home page
             setSession(userSession);
-            navigate('/sign-in', {replace: true}); // Redirect to the callback URL or home page
+            navigate('/', {replace: true}); // Redirect to the callback URL or home page
             return {}; // Return an empty object to indicate success
         } catch (error) {
             console.error("Error during authentication:", error);
