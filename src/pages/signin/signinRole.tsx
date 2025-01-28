@@ -3,28 +3,24 @@ import * as React from 'react';
 import Alert from '@mui/material/Alert';
 import LinearProgress from '@mui/material/LinearProgress';
 import {SignInPage} from '@toolpad/core/SignInPage';
-import {Navigate, useNavigate} from 'react-router';
+import { useNavigate} from 'react-router';
 import {useSession, type Session} from '../../SessionContext';
 import {signInWithGoogle, signInWithCredentials, firebaseSignOut} from '../../firebase/auth';
 
-function UnauthorisedAccount() {
+function DemoInfo() {
     return (
-        <Alert severity="error">
-            You are not authorised to access this page
+        <Alert severity="info">
+            This feature is disabled in the demo. Sign in with your Google account
         </Alert>
     );
 }
 
-export default function SignInRole() {
-    const {session, setSession, loading} = useSession();
+export default function SignIn() {
+    const {setSession, loading} = useSession();
     const navigate = useNavigate();
 
     if (loading) {
         return <LinearProgress/>;
-    }
-
-    if (session) {
-        return <Navigate to="/"/>;
     }
 
     return (
@@ -76,6 +72,7 @@ export default function SignInRole() {
                             const text = await response.text();
                             console.error("Authentication Error:", text);
                             await firebaseSignOut();
+                            navigate('/sign-in-role', { replace: true });
                             return { error: 'Not an admin or authentication failed' };
                         }
 
@@ -92,7 +89,7 @@ export default function SignInRole() {
 
                         // Set the session and redirect to the callback URL or home page
                         setSession(userSession);
-                        navigate(callbackUrl || '/', { replace: true }); // Redirect to the callback URL or home page
+                        navigate(callbackUrl || '/sign-in-role', { replace: true }); // Redirect to the callback URL or home page
                         return {}; // Return an empty object to indicate success
                     } catch (error) {
                         console.error("Error during authentication:", error);
@@ -105,7 +102,7 @@ export default function SignInRole() {
                     return { error: error instanceof Error ? error.message : 'An unexpected error occurred' };
                 }
             }}
-            slots={{subtitle: UnauthorisedAccount }}
+            slots={{subtitle:  DemoInfo}}
         />
     );
 }
