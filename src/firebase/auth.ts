@@ -14,9 +14,7 @@ const googleProvider = new GoogleAuthProvider();
 export const signInWithGoogle = async () => {
   try {
     return setPersistence(firebaseAuth, browserSessionPersistence).then(async () => {
-      console.log("Setting persistence to browserSessionPersistence");
       const result = await signInWithPopup(firebaseAuth, googleProvider);
-      console.log("signInWithPopup successful:", result);
       return {
         success: true,
         user: result.user,
