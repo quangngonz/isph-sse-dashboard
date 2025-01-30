@@ -17,6 +17,7 @@ import SignInPage from './pages/signin/signin';
 import StocksOverview from "./pages/stocks/overview/stocksOverview";
 import StockList from "./pages/stocks/list/stockList";
 import TransactionPage from "./pages/transactions/transactionPage";
+import UserPage from "./pages/users/userPage";
 
 const router = createBrowserRouter([
     {
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
 
                     {
                         path: '/users',
-                        Component: () => <div>Users List</div>,
+                        Component: UserPage,
                     },
 
                     {
