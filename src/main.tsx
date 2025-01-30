@@ -37,20 +37,20 @@ const router = createBrowserRouter([
                     },
 
                     {
-                        path: '/stocks/overview',
+                        path: '/stocks-overview',
                         Component: StocksOverview,
                     },
                     {
-                        path: '/stocks/list',
+                        path: '/stocks-list',
                         Component: StockList,
                     },
 
                     {
-                        path: '/events/pending',
+                        path: '/events-pending',
                         Component: () => <div>Pending Events</div>,
                     },
                     {
-                        path: '/events/history',
+                        path: '/events-history',
                         Component: () => <div>Events History</div>,
                     },
 
