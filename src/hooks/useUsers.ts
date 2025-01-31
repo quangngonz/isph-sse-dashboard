@@ -31,6 +31,5 @@ export const useUsers = () => {
         queryKey: ["users"], // Key to identify this query
         queryFn: fetchUsers,
         staleTime: 5000, // Cache is considered fresh for 5s
-        refetchInterval: 10000, // Refetch every 10s
     });
 };
