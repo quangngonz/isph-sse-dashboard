@@ -6,11 +6,13 @@ import {DataGrid, GridColDef, GridRowParams, GridToolbar} from '@mui/x-data-grid
 
 import {useUsers} from "../../hooks/useUsers";
 import ModifyUserModal from "./modifyUserModal";
+import {useSession} from "../../SessionContext";
 
 const userPage = () => {
-    const {data: users, isLoading, error} = useUsers();
+    const {data: users, isLoading, error, isFetching} = useUsers();
     const [selectedUser, setSelectedUser] = React.useState<typeof rows[0] | null>(null);
     const [open, setOpen] = React.useState<boolean>(false);
+    const {session} = useSession();
 
     const handleRowClick = (params: GridRowParams) => {
         setSelectedUser(params.row);
@@ -56,13 +58,13 @@ const userPage = () => {
             <DataGrid
                 rows={rows}
                 columns={columns}
-                loading={isLoading}
+                loading={isLoading || isFetching}
                 slots={{toolbar: GridToolbar}}
                 slotProps={{toolbar: {showQuickFilter: true}}}
                 pageSizeOptions={[5, 10, 25]}
                 onRowClick={handleRowClick}
             />
-            <ModifyUserModal open={open} setOpen={setOpen} selectedUser={selectedUser}/>
+            <ModifyUserModal open={open} setOpen={setOpen} selectedUser={selectedUser} session={session}/>
         </Paper>
     );
 };

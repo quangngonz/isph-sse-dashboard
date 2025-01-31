@@ -44,7 +44,9 @@ const handleLogin = async (
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`, // Include the Firebase token
                 },
-                body: JSON.stringify({userId}), // Send the userId in the request body
+                body: JSON.stringify({
+                    userId: userId,
+                }),
             });
 
             // Handle non-JSON or failed responses

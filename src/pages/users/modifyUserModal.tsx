@@ -3,7 +3,10 @@ import Backdrop from '@mui/material/Backdrop';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
-import {Button, Card} from "@mui/material";
+import {Button, Card, MenuItem, TextField} from "@mui/material";
+import {Session} from "../../SessionContext";
+import handleUserEdit from "./handleUserEdit";
+import {useQueryClient} from "@tanstack/react-query";
 
 const style = {
     position: 'absolute',
@@ -16,53 +19,108 @@ const style = {
     p: 4,
 };
 
-export default function ModifyUserModal({open, setOpen, selectedUser}: ModifyUserModalProps) {
+export default function ModifyUserModal({open, setOpen, selectedUser, session}: ModifyUserModalProps) {
     const handleClose = () => setOpen(false);
+    const authToken = session?.user?.token;
+    const queryClient = useQueryClient();
+
+    const [formData, setFormData] = React.useState({
+        user_id: selectedUser?.id || "",
+        username: selectedUser?.username || "",
+        role: selectedUser?.role || "",
+        house: selectedUser?.house || ""
+    });
+
+    React.useEffect(() => {
+        if (selectedUser) {
+            setFormData({
+                user_id: selectedUser.id,
+                username: selectedUser.username,
+                role: selectedUser.role,
+                house: selectedUser.house
+            });
+        }
+    }, [selectedUser]);
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const {name, value} = event.target;
+        setFormData(prevState => ({...prevState, [name]: value}));
+    };
+
+    const handleSubmit = () => {
+        console.log("Updated User Data:", formData);
+        handleUserEdit(formData, session, authToken).then(async (response) => {
+            console.log("Edit User Response:", response);
+            // @ts-ignore
+            await queryClient.invalidateQueries('users');
+        });
+        handleClose();
+    };
 
     return (
-        <div>
-            <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                open={open}
-                onClose={handleClose}
-                closeAfterTransition
-                slots={{backdrop: Backdrop}}
-                slotProps={{
-                    backdrop: {
-                        timeout: 500,
-                    },
-                }}
-            >
-                <Fade in={open}>
-                    <Card sx={style}>
-                        <Typography id="transition-modal-title" variant="h6" component="h2">
-                            Modifying user {selectedUser?.username}
-                        </Typography>
-                        <Typography id="transition-modal-description" sx={{m: 2}}>
-                            <UserInfo selectedUser={selectedUser}/>
-                            {/*// TODO: Add form to modify user*/}
-                        </Typography>
-                        <Button onClick={handleClose} variant="contained">Close</Button>
-                    </Card>
-                </Fade>
-            </Modal>
-        </div>
-    );
-}
-
-function UserInfo({selectedUser}: { selectedUser: User | null }) {
-    return (
-        <Typography>
-            {selectedUser ? (
-                <>
-                    Modifying for <strong>{selectedUser.username}</strong> who is
-                    a <strong>{selectedUser.role}</strong> from <strong>{selectedUser.house}</strong>
-                </>
-            ) : (
-                "No user selected"
-            )}
-        </Typography>
+        <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            open={open}
+            onClose={handleClose}
+            closeAfterTransition
+            slots={{backdrop: Backdrop}}
+            slotProps={{
+                backdrop: {
+                    timeout: 500,
+                },
+            }}
+        >
+            <Fade in={open}>
+                <Card sx={style}>
+                    <Typography id="transition-modal-title" variant="h6" component="h2">
+                        Modifying user {selectedUser?.username}
+                    </Typography>
+                    <form onSubmit={(e) => {
+                        e.preventDefault();
+                        handleSubmit();
+                    }}>
+                        <TextField
+                            fullWidth
+                            margin="normal"
+                            label="Username"
+                            name="username"
+                            value={formData.username}
+                            onChange={handleChange}
+                        />
+                        <TextField
+                            select
+                            fullWidth
+                            margin="normal"
+                            label="Role"
+                            name="role"
+                            value={formData.role}
+                            onChange={handleChange}
+                        >
+                            <MenuItem value="student">Student</MenuItem>
+                            <MenuItem value="teacher">Teacher</MenuItem>
+                            <MenuItem value="admin">Admin</MenuItem>
+                        </TextField>
+                        <TextField
+                            select
+                            fullWidth
+                            margin="normal"
+                            label="House"
+                            name="house"
+                            value={formData.house}
+                            onChange={handleChange}
+                        >
+                            <MenuItem value="Rua Bien">Rua Bien</MenuItem>
+                            <MenuItem value="Voi">Voi</MenuItem>
+                            <MenuItem value="Te Giac">Te Giac</MenuItem>
+                            <MenuItem value="Ho">Ho</MenuItem>
+                        </TextField>
+                        <Button onClick={handleClose} variant="outlined" sx={{mt: 2, mr: 1}}>Cancel</Button>
+                        <Button type="submit" variant="contained" sx={{mt: 2}}>Save Changes</Button>
+                    </form>
+                </Card>
+            </Fade>
+        </Modal>
     );
 }
 
@@ -77,5 +135,5 @@ type ModifyUserModalProps = {
     open: boolean;
     setOpen: (open: boolean) => void;
     selectedUser: User | null;
+    session: Session | null;
 };
-
