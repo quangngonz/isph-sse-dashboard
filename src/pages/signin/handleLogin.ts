@@ -6,8 +6,11 @@ import type {Session} from "../../SessionContext";
 const handleLogin = async (
     provider: AuthProvider,
     formData: any,
-    navigate: NavigateFunction,
-    setSession: Function) => {
+    navigate: NavigateFunction, setSession: {
+        (session: Session): void;
+        (session: Session): void;
+        (arg0: Session): void;
+    }) => {
     let result;
     try {
         // Handle provider-specific sign-in logic
@@ -25,6 +28,7 @@ const handleLogin = async (
         }
 
         if (!result?.success || !result?.user) {
+            console.error("Sign-in failed:", result?.error);
             await firebaseSignOut();
             return {error: result?.error || 'Failed to sign in'};
         }
