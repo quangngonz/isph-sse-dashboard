@@ -68,6 +68,10 @@ const router = createBrowserRouter([
                     {
                         path: '/settings',
                         Component: () => <div>Settings</div>,
+                    },
+                    {
+                        path: '/changelog',
+                        Component: () => <div>Changelog</div>,
                     }
                 ],
             },

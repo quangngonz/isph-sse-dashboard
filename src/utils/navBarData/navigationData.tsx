@@ -6,6 +6,7 @@ import HistoryIcon from '@mui/icons-material/History';
 import PeopleIcon from '@mui/icons-material/People';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import SettingsIcon from '@mui/icons-material/Settings';
+import EditNoteIcon from '@mui/icons-material/EditNote';
 
 import EventIcon from '@mui/icons-material/Event';
 
@@ -81,6 +82,11 @@ const NAVIGATION: Navigation = [
         title: 'Settings',
         icon: <SettingsIcon/>,
     },
+    {
+        segment: 'changelog',
+        title: 'Changelog',
+        icon: <EditNoteIcon/>,
+    }
 ];
 
 export default NAVIGATION;
