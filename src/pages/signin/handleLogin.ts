@@ -36,6 +36,9 @@ const handleLogin = async (
         const token = await result.user.getIdToken();
         const userId = result.user.uid;
 
+        console.log("Authenticated as user:", userId);
+        console.log("Authenticating with the backend...");
+
         try {
             // Authenticate with the backend
             const response = await fetch('https://isph-sse.vercel.app/admin/authenticate', {
