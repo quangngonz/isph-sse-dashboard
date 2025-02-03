@@ -1,6 +1,5 @@
 import * as React from "react";
 import useAllEvents from "../../hooks/useAllEvents";
-import "./EventHistory.css";
 import {DataGrid, GridColDef, GridToolbar} from "@mui/x-data-grid";
 import Paper from "@mui/material/Paper";
 import {CircularProgress} from "@mui/material";
