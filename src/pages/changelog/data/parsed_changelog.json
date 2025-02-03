@@ -1,0 +1,359 @@
+[
+    {
+        "phase_name": "Early Stages & Foundation",
+        "phase_items": [
+            {
+                "date": "2024-12-03",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added Roboto font integration and updated HTML structure by Quang Ngo.",
+                    "Implemented useTheme hook to detect light/dark theme by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-12-03",
+                "user": "PUBSUB SERVICES",
+                "descriptions": [
+                    "Merged main branch, resolved redundancy issues, and implemented updateEventStatus function. Added event processing to EngineWeights by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-12-02",
+                "user": "PUBSUB SERVICES",
+                "descriptions": [
+                    "Added LLMServices module for OpenAI and Google Generative AI evaluations; changes to stocklist options in prompt by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-12-01",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added center text to doughnut, asset object to store total asset values by definitelyna."
+                ]
+            },
+            {
+                "date": "2024-12-01",
+                "user": "CLIENT API",
+                "descriptions": [
+                    "Added EngineWeights table to database schema by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-11-30",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added doughnut chart display for portfolio assets by definitelyna."
+                ]
+            },
+            {
+                "date": "2024-11-29",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added User Card to display user photo and name; Google sign-in feature added by definitelyna."
+                ]
+            },
+            {
+                "date": "2024-11-27",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added overlay UI, integrated react-router-dom, and replaced ApexChart with InfragisticChart by definitelyna."
+                ]
+            },
+            {
+                "date": "2024-11-26",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Initial implementation of candlestick graph (day view) by definitelyna."
+                ]
+            },
+            {
+                "date": "2024-11-26",
+                "user": "PUBSUB SERVICES",
+                "descriptions": [
+                    "Added CORS support, enhanced Redis connection setup, and various improvements to event and evaluation handling by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-11-24",
+                "user": "CLIENT API",
+                "descriptions": [
+                    "Implemented event management with working evaluation endpoints and task queue. Integrated task queue for event approval process by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-11-23",
+                "user": "CLIENT API",
+                "descriptions": [
+                    "Removal of outdated models and addition of JSON utility and data generation scripts by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-11-20",
+                "user": "CLIENT API",
+                "descriptions": [
+                    "Initial work on documentation with SwaggerUI setup and API documentation routes by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-11-20",
+                "user": "CLIENT API",
+                "descriptions": [
+                    "Transitioned to Vercel deployment, including configuration, server setup, and GitHub Actions workflow by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-11-17",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Resolved issues with page switching by definitelyna."
+                ]
+            },
+            {
+                "date": "2024-11-10",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added side navbar and ISPH logo by definitelyna."
+                ]
+            },
+            {
+                "date": "2024-11-08",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Initial project structure setup with folder and JSX file creation by definitelyna."
+                ]
+            }
+        ]
+    },
+    {
+        "phase_name": "Core Feature Development",
+        "phase_items": [
+            {
+                "date": "2024-12-14",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added stock carousel in dashboard by definitelyna.",
+                    "Initial commit for Heroku deployment in CLIENT_API by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-12-13",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added house logo by definitelyna."
+                ]
+            },
+            {
+                "date": "2024-12-13",
+                "user": "PUBSUB SERVICES",
+                "descriptions": [
+                    "Implemented stock price randomization and persistence, removed fake stock price randomization by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-12-11",
+                "user": "PUBSUB SERVICES",
+                "descriptions": [
+                    "Implemented decay constant for stock changes and fixed Redis URL selection logic by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-12-10",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added Header Dashboard by definitelyna.",
+                    "Removed Google OAuth flow and related files in CLIENT_API by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-12-09",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added CommonJS support by definitelyna."
+                ]
+            },
+            {
+                "date": "2024-12-09",
+                "user": "PUBSUB SERVICES",
+                "descriptions": [
+                    "Added stock decay and structured engine output by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-12-07",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Changed candlestick chart library, added view and range buttons by definitelyna."
+                ]
+            },
+            {
+                "date": "2024-12-04",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Changed title to \"ISPH Stocks\" by definitelyna.",
+                    "Made draft stock ownership card by definitelyna.",
+                    "Added random color palette to assets doughnut chart by definitelyna.",
+                    "Implemented user creation endpoint and service in CLIENT_API by Quang Ngo.",
+                    "Implemented user creation functionality and API endpoint in PUBSUB_SERVICES by Quang Ngo."
+                ]
+            }
+        ]
+    },
+    {
+        "phase_name": "Real-time, UI/UX, and Feature Enhancements",
+        "phase_items": [
+            {
+                "date": "2025-01-30",
+                "user": "CLIENT API",
+                "descriptions": [
+                    "Refactored navigation for mobile support and fixed router Vercel error in ADMIN_DASHBOARD by Quang Ngo.",
+                    "Implemented user management page and API integration in ADMIN_DASHBOARD by Quang Ngo.",
+                    "Implemented transaction history page and API integration in ADMIN_DASHBOARD by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2025-01-28",
+                "user": "CLIENT API",
+                "descriptions": [
+                    "Refactored admin routes for improved readability and consistency by Quang Ngo.",
+                    "Implemented admin authentication endpoint by Quang Ngo.",
+                    "Added health check route and event fetching functionality by Quang Ngo.",
+                    "Refactored role middleware for improved readability and error handling by Quang Ngo.",
+                    "Implemented admin dashboard transaction retrieval by Quang Ngo.",
+                    "Added getAllUsers endpoint to retrieve all users by Quang Ngo.",
+                    "Added stock data management features and styling in ADMIN_DASHBOARD by Quang Ngo.",
+                    "Added custom hook for fetching and managing stock data in ADMIN_DASHBOARD by Quang Ngo.",
+                    "Implemented role-based sign-in flow in ADMIN_DASHBOARD by Quang Ngo.",
+                    "Enhanced sign-in functionality with userId and token management, improved error handling, and updated session context in ADMIN_DASHBOARD by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2025-01-16",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added news card to dashboard, small changes to dashboard layout by definitelyna.",
+                    "Implemented banger headline generation and processing in PUBSUB_SERVICES by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2025-01-14",
+                "user": "CLIENT API",
+                "descriptions": [
+                    "Fix formatting issues in server.js by adding missing semicolons by Quang Ngo.",
+                    "Implemented WebSocket for real-time updates by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2025-01-13",
+                "user": "PUBSUB SERVICES",
+                "descriptions": [
+                    "Refactored transaction processing, added logging, and clarified totals by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2025-01-12",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Removed dropdown for light/dark mode changer by definitelyna.",
+                    "Added portfolio analytic graph shell to dashboard by definitelyna."
+                ]
+            },
+            {
+                "date": "2025-01-10",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added form to fetch and send data to api with access token in header automatically by definitelyna.",
+                    "Fixes white text color in trade response box by Quang Ngo.",
+                    "Added API endpoints to adjust and set stock volume in CLIENT_API by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2025-01-09",
+                "user": "CLIENT API",
+                "descriptions": [
+                    "Refactored stock transactions and added UUIDs by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2025-01-03",
+                "user": "CLIENT API",
+                "descriptions": [
+                    "Changed license to MIT and updated contribution guidelines by Quang Ngo.",
+                    "Refactored transaction processing, added logging, and clarified totals in PUBSUB_SERVICES by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-12-31",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Removed Stocks Page, added table to market page by definitelyna.",
+                    "Added leaderboard card to dashboard by definitelyna.",
+                    "Added gold silver bronze color to leaderboard by definitelyna.",
+                    "Added current user's placement under leaderboard by definitelyna.",
+                    "Added watchlist by definitelyna."
+                ]
+            },
+            {
+                "date": "2024-12-23",
+                "user": "CLIENT API",
+                "descriptions": [
+                    "Implemented endpoint to retrieve user portfolio history by Quang Ngo.",
+                    "Added daily portfolio value calculation and persistence in PUBSUB_SERVICES by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2024-12-18",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Made sign in and sign up page, added validation for user input by definitelyna."
+                ]
+            },
+            {
+                "date": "2024-12-17",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added Stock selector for candlestick graph by definitelyna.",
+                    "Added range and day/hour view functionality for candlestick graph by definitelyna."
+                ]
+            },
+            {
+                "date": "2024-12-16",
+                "user": "USER FRONTEND",
+                "descriptions": [
+                    "Added Header to window sized screen by definitelyna.",
+                    "Added responsive carousel by definitelyna.",
+                    "Added useCarouselItems hook for responsive carousel item display by Quang Ngo.",
+                    "Added useCurrentPage hook, refactored code which uses this hook by definitelyna.",
+                    "Implemented WebSocket for real-time updates in CLIENT_API by Quang Ngo."
+                ]
+            }
+        ]
+    },
+    {
+        "phase_name": "Admin Dashboard and User Management",
+        "phase_items": [
+            {
+                "date": "2025-02-03",
+                "user": "CLIENT API",
+                "descriptions": [
+                    "Added route to get all events and updated user ID description in edit user data route by Quang Ngo.",
+                    "Added event history feature with event data types, fetching logic, and UI components in ADMIN_DASHBOARD by Quang Ngo.",
+                    "Implemented event history table with DataGrid for improved UI and loading state in ADMIN_DASHBOARD by Quang Ngo.",
+                    "Added changelog route and icon to navigation in ADMIN_DASHBOARD by Quang Ngo."
+                ]
+            },
+            {
+                "date": "2025-01-31",
+                "user": "CLIENT API",
+                "descriptions": [
+                    "Implemented API route to edit user data by Quang Ngo.",
+                    "Refactored admin authentication to include role-based authorization and updated user ID retrieval method by Quang Ngo.",
+                    "Updated user data editing logic to merge current data with new data before saving by Quang Ngo.",
+                    "Updated user data editing logic to reference user ID from user data object by Quang Ngo.",
+                    "Added user modification functionality with form handling and API integration in ADMIN_DASHBOARD by Quang Ngo.",
+                    "Refactored login handling and added user edit functionality in ADMIN_DASHBOARD by Quang Ngo.",
+                    "Removed refetch interval from user fetching hook to optimize performance in ADMIN_DASHBOARD by Quang Ngo."
+                ]
+            }
+        ]
+    }
+]

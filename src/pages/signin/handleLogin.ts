@@ -35,7 +35,7 @@ const handleLogin = async (
 
         const token = await result.user.getIdToken();
         const userId = result.user.uid;
-        
+
         try {
             // Authenticate with the backend
             const response = await fetch('https://isph-sse.vercel.app/admin/authenticate', {
@@ -74,6 +74,7 @@ const handleLogin = async (
             setSession(userSession);
             localStorage.setItem('token', token);
             localStorage.setItem('user_id', userId);
+            localStorage.setItem('session', JSON.stringify(userSession));
             navigate('/', {replace: true}); // Redirect to the callback URL or home page
             return {}; // Return an empty object to indicate success
         } catch (error) {

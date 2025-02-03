@@ -19,6 +19,7 @@ import StockList from "./pages/stocks/list/stockList";
 import TransactionPage from "./pages/transactions/transactionPage";
 import UserPage from "./pages/users/userPage";
 import EventHistory from "./pages/events/eventHistory";
+import Changelog from "./pages/changelog/changelog";
 
 const router = createBrowserRouter([
     {
@@ -71,7 +72,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: '/changelog',
-                        Component: () => <div>Changelog</div>,
+                        Component: Changelog,
                     }
                 ],
             },

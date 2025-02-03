@@ -1,0 +1,301 @@
+Early Stages & Foundation (2024-11-08 to 2024-12-03)
+
+2024-11-08 (USER_FRONTEND)
+
+Initial project structure setup with folder and JSX file creation by definitelyna.
+
+2024-11-10 (USER_FRONTEND)
+
+Added side navbar and ISPH logo by definitelyna.
+
+2024-11-17 (USER_FRONTEND)
+
+Resolved issues with page switching by definitelyna.
+
+2024-11-20 (CLIENT_API)
+
+Initial work on documentation with SwaggerUI setup and API documentation routes by Quang Ngo.
+
+2024-11-20 (CLIENT_API, PUBSUB_SERVICES)
+
+Transitioned to Vercel deployment, including configuration, server setup, and GitHub Actions workflow by Quang Ngo.
+
+2024-11-21 (CLIENT_API)
+
+Refactoring of event handling, including renaming 'processed' to 'evaluated' by Quang Ngo.
+
+2024-11-23 (CLIENT_API)
+
+Removal of outdated models and addition of JSON utility and data generation scripts by Quang Ngo.
+
+2024-11-24 (CLIENT_API, PUBSUB_SERVICES)
+
+Implemented event management with working evaluation endpoints and task queue. Integrated task queue for event approval process by Quang Ngo.
+
+2024-11-26 (USER_FRONTEND)
+
+Initial implementation of candlestick graph (day view) by definitelyna.
+
+2024-11-26 (PUBSUB_SERVICES)
+
+Added CORS support, enhanced Redis connection setup, and various improvements to event and evaluation handling by Quang Ngo.
+
+2024-11-27 (USER_FRONTEND)
+
+Added overlay UI, integrated react-router-dom, and replaced ApexChart with InfragisticChart by definitelyna.
+
+2024-11-27 (PUBSUB_SERVICES)
+
+Refactoring of engine functionality and Procfile updates for event processing by Quang Ngo.
+
+2024-11-29 (USER_FRONTEND)
+
+Added User Card to display user photo and name; Google sign-in feature added by definitelyna.
+
+2024-11-30 (USER_FRONTEND)
+
+Added doughnut chart display for portfolio assets by definitelyna.
+
+2024-12-01 (USER_FRONTEND)
+
+Added center text to doughnut, asset object to store total asset values by definitelyna.
+
+2024-12-01 (CLIENT_API)
+
+Added EngineWeights table to database schema by Quang Ngo.
+
+2024-12-01 (PUBSUB_SERVICES)
+
+Improvements to engine with error fixes, logging, and CORS handling by Quang Ngo.
+
+2024-12-02 (PUBSUB_SERVICES)
+
+Added LLMServices module for OpenAI and Google Generative AI evaluations; changes to stocklist options in prompt by Quang Ngo.
+
+2024-12-03 (USER_FRONTEND)
+
+Added Roboto font integration and updated HTML structure by Quang Ngo.
+
+Implemented useTheme hook to detect light/dark theme by Quang Ngo.
+
+2024-12-03 (CLIENT_API)
+
+Refactoring of the getUserPortfolio function to include stock details and evaluation by Quang Ngo.
+
+2024-12-03 (PUBSUB_SERVICES)
+
+Merged main branch, resolved redundancy issues, and implemented updateEventStatus function. Added event processing to EngineWeights by Quang Ngo.
+
+Core Feature Development (2024-12-04 to 2025-01-14)
+
+2024-12-04 (USER_FRONTEND)
+
+Changed title to "ISPH Stocks" by definitelyna.
+
+Made draft stock ownership card by definitelyna.
+
+Added random color palette to assets doughnut chart by definitelyna.
+
+Implemented user creation endpoint and service in CLIENT_API by Quang Ngo.
+
+Implemented user creation functionality and API endpoint in PUBSUB_SERVICES by Quang Ngo.
+
+2024-12-06 (PUBSUB_SERVICES)
+
+Refined evaluation and projection logic, standardized event data access, and added structured output for engine data by Quang Ngo.
+
+2024-12-07 (USER_FRONTEND)
+
+Changed candlestick chart library, added view and range buttons by definitelyna.
+
+2024-12-09 (USER_FRONTEND)
+
+Added CommonJS support by definitelyna.
+
+2024-12-09 (PUBSUB_SERVICES)
+
+Added stock decay and structured engine output by Quang Ngo.
+
+2024-12-10 (USER_FRONTEND)
+
+Added Header Dashboard by definitelyna.
+
+Removed Google OAuth flow and related files in CLIENT_API by Quang Ngo.
+
+2024-12-11 (PUBSUB_SERVICES)
+
+Implemented decay constant for stock changes and fixed Redis URL selection logic by Quang Ngo.
+
+2024-12-13 (USER_FRONTEND)
+
+Added house logo by definitelyna.
+
+2024-12-13 (PUBSUB_SERVICES)
+
+Implemented stock price randomization and persistence, removed fake stock price randomization by Quang Ngo.
+
+2024-12-14 (USER_FRONTEND)
+
+Added stock carousel in dashboard by definitelyna.
+
+Initial commit for Heroku deployment in CLIENT_API by Quang Ngo.
+
+Real-time, UI/UX, and Feature Enhancements (2024-12-16 to 2025-01-30)
+
+2024-12-16 (USER_FRONTEND)
+
+Added Header to window sized screen by definitelyna.
+
+Added responsive carousel by definitelyna.
+
+Added useCarouselItems hook for responsive carousel item display by Quang Ngo.
+
+Added useCurrentPage hook, refactored code which uses this hook by definitelyna.
+
+Implemented WebSocket for real-time updates in CLIENT_API by Quang Ngo.
+
+2024-12-17 (USER_FRONTEND)
+
+Centered and adjusted size of dashboard header stock cards by definitelyna.
+
+Added Stock selector for candlestick graph by definitelyna.
+
+Added range and day/hour view functionality for candlestick graph by definitelyna.
+
+2024-12-18 (USER_FRONTEND)
+
+Made sign in and sign up page, added validation for user input by definitelyna.
+
+2024-12-22 (USER_FRONTEND)
+
+Created temporary profile page by definitelyna.
+
+2024-12-23 (CLIENT_API)
+
+Implemented endpoint to retrieve user portfolio history by Quang Ngo.
+
+Added daily portfolio value calculation and persistence in PUBSUB_SERVICES by Quang Ngo.
+
+2024-12-26 to 2024-12-28 (RPI_LED_SCREEN)
+
+Initial commit and setup of Raspberry Pi LED screen project by quangngonz.
+
+Implemented fetching and displaying S&P 500 tickers on LED matrix by quangngonz.
+
+Added README with project overview, setup instructions, and demo video by Quang Ngo.
+
+Refactored font initialization, enhanced scrolling behavior, and adjusted text spacing by quangngonz.
+
+2024-12-31 (USER_FRONTEND)
+
+Removed Stocks Page, added table to market page by definitelyna.
+
+Added leaderboard card to dashboard by definitelyna.
+
+Added gold silver bronze color to leaderboard by definitelyna.
+
+Added current user's placement under leaderboard by definitelyna.
+
+Added watchlist by definitelyna.
+
+2025-01-03 (CLIENT_API, PUBSUB_SERVICES)
+
+Changed license to MIT and updated contribution guidelines by Quang Ngo.
+
+Refactored transaction processing, added logging, and clarified totals in PUBSUB_SERVICES by Quang Ngo.
+
+2025-01-09 (CLIENT_API)
+
+Refactored stock transactions and added UUIDs by Quang Ngo.
+
+Combined authentication and role authorization middleware. Implemented transaction rollback mechanism and logging by Quang Ngo.
+
+2025-01-10 (USER_FRONTEND)
+
+Added form to fetch and send data to api with access token in header automatically by definitelyna.
+
+Fixes white text color in trade response box by Quang Ngo.
+
+Added API endpoints to adjust and set stock volume in CLIENT_API by Quang Ngo.
+
+2025-01-12 (USER_FRONTEND)
+
+Removed dropdown for light/dark mode changer by definitelyna.
+
+Added portfolio analytic graph shell to dashboard by definitelyna.
+
+2025-01-13 (PUBSUB_SERVICES)
+
+Refactored transaction processing, added logging, and clarified totals by Quang Ngo.
+
+Moved transaction parsing logic, added logging, and refactored related services by Quang Ngo.
+
+2025-01-14 (CLIENT_API)
+
+Fix formatting issues in server.js by adding missing semicolons by Quang Ngo.
+
+Implemented WebSocket for real-time updates by Quang Ngo.
+
+2025-01-16 (USER_FRONTEND)
+
+Added news card to dashboard, small changes to dashboard layout by definitelyna.
+
+Implemented banger headline generation and processing in PUBSUB_SERVICES by Quang Ngo.
+
+2025-01-28 (CLIENT_API)
+
+Refactored admin routes for improved readability and consistency by Quang Ngo.
+
+Implemented admin authentication endpoint by Quang Ngo.
+
+Added health check route and event fetching functionality by Quang Ngo.
+
+Refactored role middleware for improved readability and error handling by Quang Ngo.
+
+Implemented admin dashboard transaction retrieval by Quang Ngo.
+
+Added getAllUsers endpoint to retrieve all users by Quang Ngo.
+
+Added stock data management features and styling in ADMIN_DASHBOARD by Quang Ngo.
+
+Added custom hook for fetching and managing stock data in ADMIN_DASHBOARD by Quang Ngo.
+
+Implemented role-based sign-in flow in ADMIN_DASHBOARD by Quang Ngo.
+
+Enhanced sign-in functionality with userId and token management, improved error handling, and updated session context in ADMIN_DASHBOARD by Quang Ngo.
+
+2025-01-30 (CLIENT_API)
+
+Refactored navigation for mobile support and fixed router Vercel error in ADMIN_DASHBOARD by Quang Ngo.
+
+Implemented user management page and API integration in ADMIN_DASHBOARD by Quang Ngo.
+
+Implemented transaction history page and API integration in ADMIN_DASHBOARD by Quang Ngo.
+
+Admin Dashboard and User Management (2025-01-31 to 2025-02-03)
+
+2025-01-31 (CLIENT_API)
+
+Implemented API route to edit user data by Quang Ngo.
+
+Refactored admin authentication to include role-based authorization and updated user ID retrieval method by Quang Ngo.
+
+Updated user data editing logic to merge current data with new data before saving by Quang Ngo.
+
+Updated user data editing logic to reference user ID from user data object by Quang Ngo.
+
+Added user modification functionality with form handling and API integration in ADMIN_DASHBOARD by Quang Ngo.
+
+Refactored login handling and added user edit functionality in ADMIN_DASHBOARD by Quang Ngo.
+
+Removed refetch interval from user fetching hook to optimize performance in ADMIN_DASHBOARD by Quang Ngo.
+
+2025-02-03 (CLIENT_API)
+
+Added route to get all events and updated user ID description in edit user data route by Quang Ngo.
+
+Added event history feature with event data types, fetching logic, and UI components in ADMIN_DASHBOARD by Quang Ngo.
+
+Implemented event history table with DataGrid for improved UI and loading state in ADMIN_DASHBOARD by Quang Ngo.
+
+Added changelog route and icon to navigation in ADMIN_DASHBOARD by Quang Ngo.
