@@ -11,10 +11,7 @@ export const handleUserEdit = async (formData: userFromData, session: Session | 
     const body = {
         userId: session.user.userId,
         userData: formData
-    }
-
-    console.log("Edit User Data:", body);
-    console.log("Auth Token:", authToken);
+    };
 
     const response = await fetch(API_URL, {
         method: 'POST',

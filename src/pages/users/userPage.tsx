@@ -18,8 +18,7 @@ const userPage = () => {
         setSelectedUser(params.row);
     };
 
-    const handleModifyUser = (userId: string) => {
-        console.log(`Modify user button clicked for ${userId}`);
+    const handleModifyUser = () => {
         setOpen(true);
     };
 
@@ -29,17 +28,18 @@ const userPage = () => {
     }
 
     const columns: GridColDef[] = [
-        {field: 'id', headerName: 'User', width: 150},
+        {field: 'id', headerName: 'Email', width: 250},
         {field: 'username', headerName: 'Username', width: 200},
         {field: 'house', headerName: 'House', width: 150},
         {field: 'role', headerName: 'Role', width: 150},
+        {field: 'user_id', headerName: 'User ID', width: 150},
         {
             field: 'modifyUserButton',
             headerName: 'Modify User',
             width: 150,
             renderCell: (params) => {
                 return (
-                    <Button onClick={() => handleModifyUser(params.row.username)}>Modify User</Button>
+                    <Button onClick={handleModifyUser}>Modify User</Button>
                 );
             }
         },
@@ -47,10 +47,11 @@ const userPage = () => {
 
 
     const rows = users?.map((transaction) => ({
-        id: transaction.user_id,
+        id: transaction.email,
         username: transaction.username,
         house: transaction.house,
         role: transaction.role,
+        user_id: transaction.user_id,
     })) || [];
 
     return (

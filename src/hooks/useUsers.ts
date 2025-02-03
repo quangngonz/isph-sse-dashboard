@@ -9,6 +9,7 @@ export type User = {
     house: string;
     role: string;
     user_id: string;
+    email: string;
 }
 
 

@@ -25,7 +25,7 @@ export default function ModifyUserModal({open, setOpen, selectedUser, session}: 
     const queryClient = useQueryClient();
 
     const [formData, setFormData] = React.useState({
-        user_id: selectedUser?.id || "",
+        user_id: selectedUser?.user_id || "",
         username: selectedUser?.username || "",
         role: selectedUser?.role || "",
         house: selectedUser?.house || ""
@@ -34,7 +34,7 @@ export default function ModifyUserModal({open, setOpen, selectedUser, session}: 
     React.useEffect(() => {
         if (selectedUser) {
             setFormData({
-                user_id: selectedUser.id,
+                user_id: selectedUser.user_id,
                 username: selectedUser.username,
                 role: selectedUser.role,
                 house: selectedUser.house
@@ -48,9 +48,7 @@ export default function ModifyUserModal({open, setOpen, selectedUser, session}: 
     };
 
     const handleSubmit = () => {
-        console.log("Updated User Data:", formData);
-        handleUserEdit(formData, session, authToken).then(async (response) => {
-            console.log("Edit User Response:", response);
+        handleUserEdit(formData, session, authToken).then(async () => {
             // @ts-ignore
             await queryClient.invalidateQueries('users');
         });
@@ -125,6 +123,7 @@ export default function ModifyUserModal({open, setOpen, selectedUser, session}: 
 }
 
 type User = {
+    user_id: string;
     id: string;
     username: string;
     house: string;
