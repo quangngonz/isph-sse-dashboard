@@ -139,7 +139,7 @@ print(json.dumps(sorted_data, indent=4))
 with open("parsed_changelog.json", "w") as f:
     json.dump(sorted_data, f, indent=4)
 
-with open("parsed_changelog.ts", "w") as f:
+with open("../parsed_changelog.ts", "w") as f:
     f.write("import ParsedChangelog from \"../../../utils/types/changelog\";")
     f.write("\n\n")
     f.write("export const parsedChangelog: ParsedChangelog = ")
