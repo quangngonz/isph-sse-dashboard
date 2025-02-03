@@ -27,14 +27,6 @@ export const kabanBoardData: Table = {
             style: {width: 200},
             cards: [
                 {
-                    id: '🤞 This Card is todo - but the team is not committed to completing it yet',
-                    title:
-                        '🤞 This Card is todo - but the team is not committed to completing it yet',
-                    description: '',
-                    label: '',
-                    metadata: '',
-                },
-                {
                     id: 'Create API to return Data from Database',
                     title: 'Create API to return Data from Database',
                     description: '',
@@ -220,8 +212,8 @@ export const kabanBoardData: Table = {
             ],
         },
         {
-            id: 'Done Sprint DATE - DATE 🎉',
-            label: 'Done Sprint DATE - DATE 🎉',
+            id: 'Done Sprint DATE 🎉',
+            label: 'Done Sprint DATE 🎉',
             style: {width: 200},
             cards: [],
         },

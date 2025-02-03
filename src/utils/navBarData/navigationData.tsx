@@ -84,7 +84,7 @@ const NAVIGATION: Navigation = [
     },
     {
         segment: 'changelog',
-        title: 'Changelog',
+        title: 'Changelog & Future Plans',
         icon: <EditNoteIcon/>,
     }
 ];
