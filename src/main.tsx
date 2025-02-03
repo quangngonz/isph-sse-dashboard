@@ -18,6 +18,7 @@ import StocksOverview from "./pages/stocks/overview/stocksOverview";
 import StockList from "./pages/stocks/list/stockList";
 import TransactionPage from "./pages/transactions/transactionPage";
 import UserPage from "./pages/users/userPage";
+import EventHistory from "./pages/events/eventHistory";
 
 const router = createBrowserRouter([
     {
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: '/events-history',
-                        Component: () => <div>Events History</div>,
+                        Component: EventHistory,
                     },
 
                     {

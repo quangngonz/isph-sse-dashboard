@@ -72,6 +72,8 @@ const handleLogin = async (
 
             // Set the session and redirect to the callback URL or home page
             setSession(userSession);
+            localStorage.setItem('token', token);
+            localStorage.setItem('user_id', userId);
             navigate('/', {replace: true}); // Redirect to the callback URL or home page
             return {}; // Return an empty object to indicate success
         } catch (error) {
