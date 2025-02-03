@@ -1,7 +1,7 @@
 import {Session} from "../../SessionContext";
 
-
-const api_url = "https://isph-sse.vercel.app/admin/edit-user-data"
+const API_ROOT = import.meta.env.VITE_API_ROOT;
+const API_URL = `${API_ROOT}/admin/edit-user-data`;
 
 export const handleUserEdit = async (formData: userFromData, session: Session | null, authToken: string | undefined) => {
     if (!session) {
@@ -16,7 +16,7 @@ export const handleUserEdit = async (formData: userFromData, session: Session | 
     console.log("Edit User Data:", body);
     console.log("Auth Token:", authToken);
 
-    const response = await fetch(api_url, {
+    const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

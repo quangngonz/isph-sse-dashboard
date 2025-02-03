@@ -1,6 +1,7 @@
 import {useQuery} from "@tanstack/react-query";
 
-const API_URL = "https://isph-sse.vercel.app/admin/get-all-users";
+const API_ROOT = import.meta.env.VITE_API_ROOT;
+const API_URL = `${API_ROOT}/admin/get-all-users`;
 
 
 export type User = {
