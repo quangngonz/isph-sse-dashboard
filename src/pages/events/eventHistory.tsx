@@ -6,6 +6,8 @@ import {CircularProgress} from "@mui/material";
 
 const EventHistory = () => {
     const {data: events, isLoading} = useAllEvents();
+    const [selectedEvent, setSelectedEvent] = React.useState<any>(null);
+
     if (!events) {
         return (
             <div style={{display: 'flex', height: '5%', alignItems: 'center', justifyContent: 'center'}}>
@@ -60,20 +62,29 @@ const EventHistory = () => {
 
     const handleRowClick = (params: { row: any; }) => {
         console.log(params.row);
+        setSelectedEvent(params.row);
     }
 
     return (
-        <Paper style={{height: 'auto', width: '100%'}}>
-            <DataGrid
-                rows={rows}
-                columns={columns}
-                loading={isLoading}
-                slots={{toolbar: GridToolbar}}
-                slotProps={{toolbar: {showQuickFilter: true}}}
-                pageSizeOptions={[5, 10, 25]}
-                onRowClick={handleRowClick}
-            />
-        </Paper>
+        <>
+            <Paper style={{height: 'auto', width: '100%'}}>
+                <DataGrid
+                    rows={rows}
+                    columns={columns}
+                    loading={isLoading}
+                    slots={{toolbar: GridToolbar}}
+                    slotProps={{toolbar: {showQuickFilter: true}}}
+                    pageSizeOptions={[5, 10, 25]}
+                    onRowClick={handleRowClick}
+                />
+            </Paper>
+            {selectedEvent && (
+                <div>
+                    <h2>Selected Event</h2>
+                    <pre>{JSON.stringify(selectedEvent, null, 2)}</pre>
+                </div>
+            )}
+        </>
     );
 };
 

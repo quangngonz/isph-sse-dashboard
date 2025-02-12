@@ -4,6 +4,7 @@ import {Box, Card, CardContent, Divider, Typography,} from '@mui/material';
 import Grid from '@mui/material/Grid2';
 
 const KanbanBoard = () => {
+    // @ts-ignore
     return (
         <Box sx={{padding: '20px', overflowX: 'auto'}}>
             <Grid container spacing={2} wrap="nowrap">
